@@ -1,8 +1,12 @@
-body {
-    width: 100%;
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Poppins;
+}
+
+body {
+    width: 100%;
 }
 
 header {
@@ -13,16 +17,30 @@ header {
     background-position: top;
     background-size: cover;
     background-attachment: fixed;
+    padding: 10px 50px 50px 50px;
     display: flex;
-    justify-content: center;
-    align-items: end;
-    padding: 50px;
-    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header nav {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+}
+
+header section {
+    display: flex;
+    align-items: center;
 }
 
 button {
     padding: 8px 20px;
-    font-family: Poppins;
     cursor: pointer;
     border-color: #ffffff;
     border-radius: 3px;
@@ -34,10 +52,143 @@ button {
     backdrop-filter: blur(1);
     color: #073B4C;
     transition: 200ms;
+    display: inline;
 }
 
 button:hover {
     color: white;
     background-color: #073B4C;
     border-color: #073B4C;
+}
+
+.button-container {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+ul li {
+    margin: 0 15px;
+}
+
+li a {
+    color: white;
+    text-decoration: none;
+    transition: 200ms;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+li a:hover {
+    color: #073B4C;
+    transition: 200ms;
+}
+
+ul img {
+    width: 40px;
+}
+
+ul span {
+    margin-left: 10px;
+    font-weight: 600;
+    color: white;
+    font-size: 25px;
+}
+
+.offre, .blog {
+    color: rgb(57, 57, 57);
+}
+
+header h1 {
+    font-size: 30px;
+    color: white;
+    opacity: 0;
+    transition: opacity 1s ease-in-out,
+                margin-top 1s ease-in-out;
+    margin-top: 100px;
+    text-align: center;
+}
+
+header h1.loading {
+    opacity: 1;
+    transition: opacity 1s ease-in-out,
+                margin-top 1s ease-in-out;
+    margin-top: 0;
+}
+
+.nav-mobile {
+    display: none;
+}
+
+.menu-mobile-container {
+    width: 0%;
+    height: 100%;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: width 200ms ease-in-out;
+}
+
+.menu-mobile-container.active {
+    width: 100%;
+    transition: width 200ms ease-in-out;
+}
+
+.menu-mobile-container ul {
+    width: 0%;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 20px;
+    overflow: hidden;
+}
+
+.menu-mobile-container.active ul {
+    width: 100%;
+}
+
+.hide-menu {
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding-bottom: 2px;
+}
+
+@media only screen and (max-width: 766px) {
+    header {
+        padding: 10px 20px 20px 20px;
+    }
+    header section {
+        display: flex;
+        text-align: center;
+        width: 100%;
+        justify-content: center;
+    }
+    header h1 {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    .nav-desktop {
+        display: none;
+    }
+    .nav-mobile {
+        display: block;
+    }
 }

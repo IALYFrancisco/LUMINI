@@ -1,0 +1,100 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/Home.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'img/favicon1.png' %}" type="image/x-icon">
+    <title>Accueil - LUMINI</title>
+</head>
+<body>
+    <header>
+        <div class="menu-mobile-container">
+            <div class="hide-menu">
+                &Cross;
+            </div>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#" class="offre">Offre d'emploi</a></li>
+                <li><a href="#" class="blog">Blog</a></li>
+            </ul>
+        </div>
+        <nav>
+            <ul>
+                <img src="{% static 'img/favicon1.png' %}" alt="logo de LUMINI" title="logo de LUMINI">
+                <span>LUMINI</span>
+            </ul>
+            <ul class="nav-desktop">
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#" class="offre">Offre d'emploi</a></li>
+                <li><a href="#" class="blog">Blog</a></li>
+            </ul>
+            <ul class="nav-mobile">
+                <img class="menu" src="{% static 'img/menu.png' %}" alt="">
+            </ul>
+        </nav>
+        <section>
+            <h1>Ensemble, réalisons vos rêves.</h1>
+        </section>
+        <div class="button-container">
+            <a href="#services">
+                <button>Explorer</button>
+            </a>
+        </div>
+    </header>
+    <section class="services" id="services">
+        <div class="head">
+            <h2>Nos services</h2>
+            <p>
+                Nous sommes une agence engageant dans la numérisation des idées, des stratégies afin d'accroître la courbe de développement d'un sujet tout en rendant les services cités ci-dessous:
+            </p>
+        </div>
+        <div class="body">
+            <div class="card">
+                <div class="info-container">
+                    <img src="{% static 'img/dev-mobile.png' %}" alt="">
+                    <h4>Développement web</h4>
+                    <span>
+                        <p>Site web, Application web</p>
+                    </span>
+                    <button>Consulter</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="info-container">
+                    <img src="{% static 'img/app-mobile.png' %}" alt="">
+                    <h4>Développement mobile</h4>
+                    <span>
+                        <p>Android, iOS</p>
+                    </span>
+                    <button>Consulter</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="info-container">
+                    <img src="{% static 'img/hebergement.png' %}" alt="">
+                    <h4>Hébergement web</h4>
+                    <span>
+                        <p>Site statique, site dynamique</p>
+                    </span>
+                    <button>Consulter</button>
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <button>Nous contacter</button>
+        </div>
+    </section>
+    <section class="realisation">
+        <div class="head">
+            <h2>Nos processus de réalisation de projet</h2>
+            <p>
+                Nous nous engageons à votre côté, main dans la main, pour donner vie à votre idée de génie afin de créer une solution originale, mature et robuste. C'est pour celà qu'on a mis en place des étapes bien déterminées pour des succès garantis.
+            </p>
+        </div>
+    </section>
+    <script src="{% static 'js/Home.js' %}"></script>
+</body>
+</html>

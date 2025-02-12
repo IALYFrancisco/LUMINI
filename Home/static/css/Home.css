@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    height: 500px;
+    /* background-image: linear-gradient(30deg, #33c0ef, #ffafc2, #33c0ef); */
+    background-image: url('../img/header-bg.jpg');
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 10px 50px 50px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header nav {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+}
+
+header section {
+    display: flex;
+    align-items: center;
+}
+
+button {
+    padding: 8px 20px;
+    cursor: pointer;
+    border-color: #ffffff;
+    border-radius: 3px;
+    border-width: 2px;
+    border-style: solid;
+    background-color: white;
+    font-weight: 400;
+    font-size: 14px;
+    color: #073B4C;
+    transition: 200ms;
+}
+
+button:hover {
+    color: white;
+    background-color: #073B4C;
+    border-color: #073B4C;
+}
+
+.button-container {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+ul li {
+    margin: 0 15px;
+}
+
+li a {
+    color: white;
+    text-decoration: none;
+    transition: 200ms;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+li a:hover {
+    color: #073B4C;
+    transition: 200ms;
+}
+
+ul img {
+    width: 40px;
+}
+
+ul span {
+    margin-left: 10px;
+    font-weight: 600;
+    color: white;
+    font-size: 25px;
+}
+
+.offre, .blog {
+    color: rgb(57, 57, 57);
+}
+
+header h1 {
+    font-size: 30px;
+    color: white;
+    opacity: 0;
+    transition: opacity 1s ease-in-out,
+                margin-top 1s ease-in-out;
+    margin-top: 100px;
+    text-align: center;
+}
+
+header h1.loading {
+    opacity: 1;
+    transition: opacity 1s ease-in-out,
+                margin-top 1s ease-in-out;
+    margin-top: 0;
+}
+
+.nav-mobile {
+    display: none;
+}
+
+.menu-mobile-container {
+    width: 0%;
+    height: 100%;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: width 200ms ease-in-out;
+}
+
+.menu-mobile-container.active {
+    width: 100%;
+    transition: width 200ms ease-in-out;
+}
+
+.menu-mobile-container ul {
+    width: 0%;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 20px;
+    overflow: hidden;
+}
+
+.menu-mobile-container.active ul {
+    width: 100%;
+}
+
+.hide-menu {
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding-bottom: 2px;
+}
+
+header a {
+    text-decoration: none;
+}
+
+.services {
+    margin: 100px auto;
+    max-width: 1400px;
+}
+
+.services h2 {
+    color: #073B4C;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.services p {
+    color: #073B4C;
+    text-align: center;
+    margin: auto;
+    font-size: 14px;
+    width: 50%;
+}
+
+.services .body {
+    margin-top: 50px;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 30px;
+    row-gap: 30px;
+}
+
+.services .card {
+    width: 230px;
+    min-width: 230px;
+    height: 300px;
+    background-image: linear-gradient(30deg, #33c0ef, #ffafc2, #33c0ef);
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 2px;
+    color: #073B4C;
+}
+
+.card .info-container {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-container img {
+    width: 100px;
+    margin-bottom: 30px;
+}
+
+.info-container p {
+    width: 70%;
+}
+
+.card button {
+    padding: 8px 20px;
+    cursor: pointer;
+    background-color: #073B4C;
+    border: none;
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    transition: 200ms;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.card button:hover {
+    border-color: white;
+    color: #073B4C;
+}
+
+.card button::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-image: linear-gradient(30deg, #33c0ef, #ffafc2, #33c0ef);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: 200ms ease-in-out;
+    border-radius: 3px;
+}
+
+button:hover:before {
+    width: 100%;
+    transition: 200ms ease-in-out;
+}
+
+.foot {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.foot button::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-image: linear-gradient(30deg, #33c0ef, #ffafc2, #33c0ef);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: 200ms ease-in-out;
+    border-radius: 3px;
+}
+
+.foot button:hover:before {
+    width: 100%;
+    transition: 200ms ease-in-out;
+}
+
+.foot button {
+    padding: 8px 20px;
+    cursor: pointer;
+    background-color: #073B4C;
+    border: none;
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    transition: 200ms;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.foot button:hover {
+    border-color: white;
+    color: #073B4C;
+}
+
+.realisation {
+    color: #073B4C;
+    margin-top: 125px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.realisation .head {
+    text-align: center;
+}
+
+.realisation p {
+    font-size: 14px;
+    width: 50%;
+    margin: auto;
+}
+
+.realisation h2 {
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 766px) {
+    header {
+        padding: 10px 20px 20px 20px;
+    }
+    header section {
+        display: flex;
+        text-align: center;
+        width: 100%;
+        justify-content: center;
+    }
+    header h1 {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    .nav-desktop {
+        display: none;
+    }
+    .nav-mobile {
+        display: block;
+    }
+}

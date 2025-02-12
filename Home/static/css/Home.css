@@ -13,7 +13,6 @@ body {
 header {
     width: 100%;
     height: 500px;
-    /* background-image: linear-gradient(30deg, #33c0ef, #ffafc2, #33c0ef); */
     background-image: url('../img/header-bg.jpg');
     background-position: top;
     background-size: cover;
@@ -213,7 +212,7 @@ header a {
     color: #073B4C;
 }
 
-.card .info-container {
+.services .card .info-container {
     width: 100%;
     height: 100%;
     background-color: white;
@@ -247,12 +246,12 @@ header a {
     z-index: 1;
 }
 
-.card button:hover {
+.services .card button:hover {
     border-color: white;
     color: #073B4C;
 }
 
-.card button::before {
+.services .card button::before {
     content: '';
     position: absolute;
     width: 0%;
@@ -333,6 +332,66 @@ button:hover:before {
     margin-bottom: 20px;
 }
 
+.realisation .body {
+    margin-top: 50px;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 30px;
+    row-gap: 30px;
+}
+
+.realisation .card {
+    width: 230px;
+    min-width: 230px;
+    height: 300px;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    color: #073B4C;
+    transition: opacity 200ms ease-in-out;
+    box-shadow: 1px 1px 5px #073b4c2f inset, -1px -1px 5px #073b4c2f inset;
+    background-image: url('../img/card-bg.jpg');
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+    transition: 200ms ease-in-out;
+}
+
+.realisation .card:hover {
+    opacity: 1;
+    transition: opacity 200ms ease-in-out, margin-top 200ms ease-in-out;
+    margin-top: -10px;
+}
+
+.realisation .foot {
+    margin-bottom: 50px;
+}
+
+.realisation .info-container {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+}
+
+.card .number {
+    font-size: 70px;
+}
+
+.realisation .card button:hover {
+    background-color: white;
+    color: #073B4C;
+}
+
 @media only screen and (max-width: 766px) {
     header {
         padding: 10px 20px 20px 20px;
@@ -345,6 +404,11 @@ button:hover:before {
     }
     header h1 {
         width: 70%;
+    }
+
+    .realisation h2 {
+        width: 50%;
+        margin: 0 auto 20px auto;
     }
 }
 

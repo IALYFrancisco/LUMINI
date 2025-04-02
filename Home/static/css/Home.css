@@ -3,6 +3,11 @@
     src: url('../font/Sweet\ Signature.ttf');
 }
 
+@font-face {
+    font-family: Poppins;
+    src: url('../font/Poppins-Regular.ttf')
+}
+
 * {
     margin: 0;
     padding: 0;

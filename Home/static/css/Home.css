@@ -418,6 +418,9 @@ header a {
 
 .marques {
     margin-top: 100px;
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
 }
 
 .marques .head {

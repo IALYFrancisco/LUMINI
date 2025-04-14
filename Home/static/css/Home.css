@@ -1,3 +1,13 @@
+@font-face {
+    font-family: Signature;
+    src: url('../font/Sweet\ Signature.ttf');
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url('../font/Poppins-Regular.ttf')
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -409,6 +419,97 @@ header a {
     color: #073B4C;
     background-color: white;
     border-color: white;
+}
+
+.marques {
+    margin-top: 100px;
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.marques .head {
+    text-align: center;
+    color: #073B4C;
+    width: 50%;
+    margin: auto;
+}
+
+.marques h2 {
+    margin-bottom: 20px;
+}
+
+.marques .body {
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.marques p {
+    font-size: 14px;
+    color: #073B4C;
+}
+
+.marques .body img {
+    width: 65px;
+}
+
+.marques .card-container {
+    display: flex;
+    column-gap: 65px;
+}
+
+.marques a {
+    text-decoration: none;
+    text-align: center;
+}
+
+.marques .plateform_name {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.marques .card-logo {
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #073B4C;
+}
+
+.marques .card-logo a {
+    width: 100%;
+    height: 100%;
+}
+
+.marques .beauxarts-logo {
+    font-family: Signature;
+    font-weight: 800;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #073B4C;
+}
+
+.card-logo-beauxarts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
+
+.card-logo-beauxarts a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    height: 100%;
+}
+
+.card-logo-beauxarts p {
+    font-size: 14px;
+    color: #073B4C;
 }
 
 @media only screen and (max-width: 766px) {

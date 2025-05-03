@@ -422,10 +422,9 @@ header a {
 }
 
 .marques {
-    margin-top: 100px;
     width: 100%;
     max-width: 1400px;
-    margin: auto;
+    margin: 100px  auto auto auto;
 }
 
 .marques .head {
@@ -441,9 +440,58 @@ header a {
 
 .marques .body {
     width: 100%;
-    margin-top: 40px;
+    max-width: 775px;
+    margin: 40px auto auto auto;
     display: flex;
     justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.marques .body::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(to left, transparent, white);
+    left: 0;
+    z-index: 1;
+}
+
+.marques .body::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(to right, transparent, white);
+    right: 0;
+}
+
+.marques .body:hover .card-container {
+    animation-play-state: paused;
+}
+
+.first {
+    animation:  10s slide linear infinite;
+    padding: 0 33px;
+}
+
+.second {
+    animation:  10s slide linear infinite;
+    padding: 0 33px;
+}
+
+.third {
+    animation:  10s slide linear infinite;
+    padding: 0 33px;
+}
+
+@keyframes slide {
+    from{
+        transform: translateX(0%);    
+    }to{
+        transform: translateX(-100%);
+    }
 }
 
 .marques p {

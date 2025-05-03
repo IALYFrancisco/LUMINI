@@ -139,7 +139,27 @@
             <p>Notre objectif est non seulement votre présence en ligne, c'est surtout la perfection de nos produits ainsi que votre satisfaction. Autrement dit, vos objectifs sont aussi les notres. </p>
         </div>
         <div class="body">
-            <div class="card-container">
+            <div class="card-container first">
+                {% for project in projects %}
+                    <div class="card-logo">
+                        <a href="{{ project.host_url }}" target="_blank">
+                            <img src="{% static 'img/logo_gamepalace.png' %}" alt="logo de APIPOST">
+                            <p class="plateform_name">{{ project.name }}</p>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="card-container second">
+                {% for project in projects %}
+                    <div class="card-logo">
+                        <a href="{{ project.host_url }}" target="_blank">
+                            <img src="{% static 'img/logo_gamepalace.png' %}" alt="logo de APIPOST">
+                            <p class="plateform_name">{{ project.name }}</p>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="card-container third">
                 {% for project in projects %}
                     <div class="card-logo">
                         <a href="{{ project.host_url }}" target="_blank">
@@ -150,6 +170,20 @@
                 {% endfor %}
             </div>
         </div>
+        <div class="foot">
+            <button>Nous contacter</button>
+        </div>
+    </section>
+    <section class="localisation">
+        <section class="left">
+
+        </section>
+        <aside class="right">
+            <div class="head">
+                <h2>Les marques qui nous ont fait confiance</h2>
+                <p>Notre objectif est non seulement votre présence en ligne, c'est surtout la perfection de nos produits ainsi que votre satisfaction. Autrement dit, vos objectifs sont aussi les notres. </p>
+            </div>
+        </aside>
     </section>
     <script src="{% static 'js/Home.js' %}"></script>
 </body>

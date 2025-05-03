@@ -140,30 +140,14 @@
         </div>
         <div class="body">
             <div class="card-container">
-                <div class="card-logo">
-                    <a href="" target="_blank">
-                        <img src="{% static 'img/logo_apipost.png' %}" alt="logo de APIPOST">
-                        <p class="plateform_name">APIPOST</p>
-                    </a>
-                </div>
-                <div class="card-logo">
-                    <a href="" target="_blank">
-                        <img src="{% static 'img/logo_gamepalace.png' %}" alt="logo de APIPOST">
-                        <p class="plateform_name">GAMEPALACE</p>
-                    </a>
-                </div>
-                <div class="card-logo">
-                    <a href="" target="_blank">
-                        <img src="{% static 'img/logo_technow.png' %}" alt="logo de APIPOST">
-                        <p class="plateform_name">TECHNOW</p>
-                    </a>
-                </div>
-                <div class="card-logo-beauxarts">
-                    <a href="" target="_blank">
-                        <span class="beauxarts-logo">BeauxArts</span>
-                        <p class="plateform_name">BeauxArts</p>
-                    </a>
-                </div>
+                {% for project in projects %}
+                    <div class="card-logo">
+                        <a href="{{ project.host_url }}" target="_blank">
+                            <img src="{% static 'img/logo_gamepalace.png' %}" alt="logo de APIPOST">
+                            <p class="plateform_name">{{ project.name }}</p>
+                        </a>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </section>

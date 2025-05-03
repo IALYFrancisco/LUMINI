@@ -560,6 +560,49 @@ header a {
     color: #073B4C;
 }
 
+.localisation {
+    width: 100%;
+    max-width: 1400px;
+    margin: 100px  auto auto auto;
+}
+
+.localisation .localisation-info {
+    width: 100%;
+    max-width: 775px;
+    margin: auto;
+    display: flex;
+}
+
+.localisation-info .left {
+    height: 100%;
+    width: 65%;
+    background-color: rebeccapurple;
+}
+
+.localisation-info .right {
+    height: 100%;
+    width: 35%;
+}
+
+.localisation .head {
+    color: #073B4C;
+    margin: auto;
+}
+
+.localisation h2 {
+    margin-bottom: 20px;
+}
+
+
+
+.localisation p {
+    font-size: 14px;
+}
+
+.localisation .foot {
+    text-align: initial;
+}
+
 @media only screen and (max-width: 766px) {
     header {
         padding: 10px 20px 20px 20px;

@@ -1,2 +1,5 @@
 # Dépendances du projet
 .venv
+
+# Fichier variable d'environement du projet
+.env

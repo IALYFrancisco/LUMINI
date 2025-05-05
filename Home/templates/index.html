@@ -10,7 +10,7 @@
     <title>Accueil - LUMINI</title>
 </head>
 <body>
-    <header>
+    <header id="back_to_top">
         <div class="menu-mobile-container">
             <div class="hide-menu">
                 &Cross;
@@ -139,34 +139,60 @@
             <p>Notre objectif est non seulement votre présence en ligne, c'est surtout la perfection de nos produits ainsi que votre satisfaction. Autrement dit, vos objectifs sont aussi les notres. </p>
         </div>
         <div class="body">
-            <div class="card-container">
-                <div class="card-logo">
-                    <a href="" target="_blank">
-                        <img src="{% static 'img/logo_apipost.png' %}" alt="logo de APIPOST">
-                        <p class="plateform_name">APIPOST</p>
-                    </a>
-                </div>
-                <div class="card-logo">
-                    <a href="" target="_blank">
-                        <img src="{% static 'img/logo_gamepalace.png' %}" alt="logo de APIPOST">
-                        <p class="plateform_name">GAMEPALACE</p>
-                    </a>
-                </div>
-                <div class="card-logo">
-                    <a href="" target="_blank">
-                        <img src="{% static 'img/logo_technow.png' %}" alt="logo de APIPOST">
-                        <p class="plateform_name">TECHNOW</p>
-                    </a>
-                </div>
-                <div class="card-logo-beauxarts">
-                    <a href="" target="_blank">
-                        <span class="beauxarts-logo">BeauxArts</span>
-                        <p class="plateform_name">BeauxArts</p>
-                    </a>
-                </div>
+            <div class="card-container first">
+                {% for project in projects %}
+                    <div class="card-logo">
+                        <a href="{{ project.host_url }}" target="_blank">
+                            <img src="{% static 'img/logo_gamepalace.png' %}" alt="logo de APIPOST">
+                            <p class="plateform_name">{{ project.name }}</p>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="card-container second">
+                {% for project in projects %}
+                    <div class="card-logo">
+                        <a href="{{ project.host_url }}" target="_blank">
+                            <img src="{% static 'img/logo_gamepalace.png' %}" alt="logo de APIPOST">
+                            <p class="plateform_name">{{ project.name }}</p>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="card-container third">
+                {% for project in projects %}
+                    <div class="card-logo">
+                        <a href="{{ project.host_url }}" target="_blank">
+                            <img src="{% static 'img/logo_gamepalace.png' %}" alt="logo de APIPOST">
+                            <p class="plateform_name">{{ project.name }}</p>
+                        </a>
+                    </div>
+                {% endfor %}
             </div>
         </div>
+        <div class="foot">
+            <button>Nous contacter</button>
+        </div>
     </section>
+    <section class="localisation">
+        <div class="localisation-info">
+            <section class="left">
+    
+            </section>
+            <aside class="right">
+                <div class="head">
+                    <h2>Où nous trouver ?</h2>
+                    <p>Nous sommes aussi présent partout en ligne qu'en présentiel afin d'établir plus de contact aux clients pour avoir ensemble des perceptions bien définies et lointaines.</p>
+                </div>
+                <div class="foot">
+                    <button>Prendre un rendez-vous</button>
+                </div>
+            </aside>
+        </div>
+    </section>
+    <footer>
+        <p>fait avec 💖 par <a href="#back_to_top">LUMINI</a></p>
+    </footer>
     <script src="{% static 'js/Home.js' %}"></script>
 </body>
 </html>

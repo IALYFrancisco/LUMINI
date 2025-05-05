@@ -28,7 +28,9 @@ SECRET_KEY = 'django-insecure-3d)3ebdplx8^3^bc5xf&@y@oyd0xc#ew9pdybp=sj978o=s3ze
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'lumini.onrender.com',
+]
 
 
 # Application definition

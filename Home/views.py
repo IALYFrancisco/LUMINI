@@ -12,3 +12,6 @@ def index(request):
         "projects" : response.json()["data"]
     }
     return render(request, 'index.html', context)
+
+def contact(request):
+    return render(request, 'contact.html')

@@ -12,13 +12,35 @@
 </head>
 <body>
     <header>
+        <div class="menu-mobile-container">
+            <div class="hide-menu">
+                &Cross;
+            </div>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#" class="offre">Offre d'emploi</a></li>
+                <li><a href="#" class="blog">Blog</a></li>
+            </ul>
+        </div>
         <nav>
-            
+            <ul>
+                <img src="{% static 'img/favicon1.png' %}" alt="logo de LUMINI" title="logo de LUMINI">
+                <span>LUMINI</span>
+            </ul>
+            <ul class="nav-desktop">
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#" class="offre">Offre d'emploi</a></li>
+                <li><a href="#" class="blog">Blog</a></li>
+            </ul>
+            <ul class="nav-mobile">
+                <img class="menu" src="{% static 'img/menu.png' %}" alt="">
+            </ul>
         </nav>
     </header>
     <main>
-        <aside></aside>
-        <aside></aside>
+        <aside class="left">
+        </aside>
+        <aside class="right"></aside>
     </main>
 </body>
 </html>

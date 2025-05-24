@@ -17,6 +17,7 @@ header nav {
     justify-content: space-between;
     height: 70px;
     align-items: center;
+    padding: 50px;
 }
 
 
@@ -46,6 +47,66 @@ ul img {
     width: 40px;
 }
 
+ul span {
+    margin-left: 10px;
+    font-weight: 600;
+    color: white;
+    font-size: 25px;
+}
+
+.nav-mobile {
+    display: none;
+}
+
+.menu-mobile-container {
+    width: 0%;
+    height: 100%;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: width 200ms ease-in-out;
+}
+
+.menu-mobile-container.active {
+    width: 100%;
+    transition: width 200ms ease-in-out;
+}
+
+.menu-mobile-container ul {
+    width: 0%;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 20px;
+    overflow: hidden;
+}
+
+.menu-mobile-container.active ul {
+    width: 100%;
+}
+
+.hide-menu {
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding-bottom: 2px;
+}
+
+header a {
+    text-decoration: none;
+}
+
 body {
     width: 100%;
     height: 100vh;
@@ -54,6 +115,9 @@ body {
 main {
     width: inherit;
     height: inherit;
+    position: absolute;
+    top: 0;
+    z-index: -1;
 }
 
 .left {

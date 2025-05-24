@@ -42,7 +42,38 @@
     <main>
         <aside class="left">
         </aside>
-        <aside class="right"></aside>
+        <aside class="right">
+            <form action="">
+                <h1>Simple contact</h1>
+                <p>Avez-vous des idées en tête 💡? Suggestion, critique, amélioration? Laissez-nous juste un message et on vous répondra.</p>
+                <div class="element">
+                    <label for="name">Votre nom :</label>
+                    <input type="text" name="name" id="name" required placeholder="ex: John Doe">
+                </div>
+                <div class="element">
+                    <label for="email">Votre email :</label>
+                    <input type="email" name="email" id="email" required placeholder="ex: johndoe@example.com">
+                </div>
+                <div class="element">
+                    <label for="objcet">Objet du contact :</label>
+                    <select name="object" id="object" required>
+                        <option value="simple">
+                            Simple prise de contact 🤝
+                        </option>
+                        <option value="date">
+                            Prise de rendez-vous 📅
+                        </option>
+                    </select>
+                </div>
+                <div class="element">
+                    <label for="message">Votre message :</label>
+                    <textarea name="message" id="message" required placeholder="Ecrivez votre message."></textarea>
+                </div>
+                <div class="element">
+                    <button>Envoyer</button>
+                </div>
+            </form>
+        </aside>
     </main>
 </body>
 </html>

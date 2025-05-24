@@ -11,7 +11,7 @@
 }
 
 header {
-    padding: 10px 50px 50px 50px;
+    padding: 0px 50px 50px 50px;
 }
 
 header nav {
@@ -22,8 +22,16 @@ header nav {
     height: 70px;
     align-items: center;
     margin: auto;
+    padding-top: 10px;
 }
 
+.nav-desktop {
+    background: white;
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    height: 100%;
+}
 
 ul {
     list-style-type: none;
@@ -115,6 +123,9 @@ header a {
 body {
     width: 100%;
     height: 100vh;
+    position: absolute;
+    z-index: -2;
+    overflow: hidden;
 }
 
 main {
@@ -123,6 +134,7 @@ main {
     position: absolute;
     top: 0;
     z-index: -1;
+    display: flex;
 }
 
 .left {
@@ -132,6 +144,112 @@ main {
     background-position: top left;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+.right form {
+    width: 300px;
+    margin-top: 300px;
+}
+
+.right p {
+    font-size: 13px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    color: #073B4C;
+}
+
+.right h1 {
+    color: #073B4C;
+}
+
+.right label {
+    display: block;
+    color: #073B4C;
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.right input {
+    width: 100%;
+    height: 35px;
+    border: 1px grey solid;
+    border-radius: 4px;
+    padding-left: 10px;
+    font-size: 12px;
+    outline-color: #33c0ef;
+    outline-width: 1px;
+}
+
+.right select {
+    width: 100%;
+    height: 35px;
+    border: 1px grey solid;
+    border-radius: 4px;
+    padding-left: 10px;
+    font-size: 12px;
+    color: #073B4C;
+    outline-color: #33c0ef;
+}
+
+ .right textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    border: 1px grey solid;
+    border-radius: 4px;
+    padding: 8px 10px 10px 10px;
+    font-size: 12px;
+    outline-color: #33c0ef;
+ }
+
+ .right .element {
+    margin-bottom: 25px;
+ }
+
+ .right button {
+    padding: 8px 20px;
+    cursor: pointer;
+    background-color: #073B4C;
+    border: none;
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    transition: 200ms;
+    position: relative;
+    z-index: 1;
+    border-radius: 3px;
+}
+
+.right button:hover {
+    border-color: white;
+    color: #073B4C;
+}
+
+.right button::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-image: linear-gradient(30deg, #33c0ef, #ffafc2, #33c0ef);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: 200ms ease-in-out;
+    border-radius: 3px;
+}
+
+.right button:hover:before {
+    width: 100%;
+    transition: 200ms ease-in-out;
 }
 
 @media only screen and (max-width: 766px) {

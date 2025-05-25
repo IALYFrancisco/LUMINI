@@ -54,14 +54,32 @@
                     <label for="email">Votre email :</label>
                     <input type="email" name="email" id="email" required placeholder="ex: johndoe@example.com">
                 </div>
+                <div class="element number">
+                    <label for="number">Votre numéro téléphone :</label>
+                    <input type="tel" name="number" id="number" required placeholder="ex: +261 ... ... ...">
+                </div>
                 <div class="element">
-                    <label for="objcet">Objet du contact :</label>
+                    <label for="object">Objet du contact :</label>
                     <select name="object" id="object" required onchange="checkSelectValue()">
                         <option value="simple">
                             Simple prise de contact 🤝
                         </option>
                         <option value="date">
                             Prise de rendez-vous 📅
+                        </option>
+                    </select>
+                </div>
+                <div class="element reason">
+                    <label for="objcet">Raison du prise de rendez-vous :</label>
+                    <select name="object" id="reason" required onchange="checkSelectValue()">
+                        <option value="web">
+                            Création de site web | application web 🌐
+                        </option>
+                        <option value="mobile">
+                            Création d'application mobile 📱
+                        </option>
+                        <option value="mobile">
+                            Mise en ligne d'une application web | mobile 🧱
                         </option>
                     </select>
                 </div>

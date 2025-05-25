@@ -155,13 +155,12 @@ main {
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
     overflow: auto;
 }
 
 .right form {
     width: 300px;
-    margin-top: 300px;
+    margin-top: 200px;
 }
 
 .right p {
@@ -191,6 +190,10 @@ main {
     font-size: 12px;
     outline-color: #33c0ef;
     outline-width: 1px;
+}
+
+.number, .reason {
+    display: none;
 }
 
 .right select {
@@ -231,6 +234,7 @@ main {
     position: relative;
     z-index: 1;
     border-radius: 3px;
+    margin-bottom: 100px;
 }
 
 .right button:hover {

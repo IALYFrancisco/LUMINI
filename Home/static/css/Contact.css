@@ -49,6 +49,7 @@ li a {
     font-weight: 400;
     font-size: 14px;
     color: #073B4C;
+    white-space: nowrap;
 }
 
 li a:hover {

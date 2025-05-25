@@ -56,7 +56,7 @@
                 </div>
                 <div class="element">
                     <label for="objcet">Objet du contact :</label>
-                    <select name="object" id="object" required>
+                    <select name="object" id="object" required onchange="checkSelectValue()">
                         <option value="simple">
                             Simple prise de contact 🤝
                         </option>
@@ -76,4 +76,5 @@
         </aside>
     </main>
 </body>
+<script src="{% static 'js/Contact.js' %}"></script>
 </html>

@@ -146,6 +146,10 @@ main {
     background-repeat: no-repeat;
 }
 
+.left.active {
+    background-image: url(../img/card-bg.jpg);
+}
+
 .right {
     width: 50%;
     height: 100%;

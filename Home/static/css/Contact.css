@@ -264,6 +264,7 @@ main {
 @media only screen and (max-width: 766px) {
     header {
         padding: 10px 20px 20px 20px;
+        background-color: white;
     }
     header section {
         display: flex;
@@ -278,6 +279,21 @@ main {
     .realisation h2 {
         width: 50%;
         margin: 0 auto 20px auto;
+    }
+
+    .left {
+        display: none;
+    }
+
+    .right {
+        width: 100%;
+    }
+
+    ul span {
+        color: #073B4C;
+    }
+    .nav-desktop {
+        height: max-content;
     }
 }
 

@@ -12,7 +12,7 @@
     <title>Accueil - LUMINI</title>
 </head>
 <body>
-    <header id="back_to_top">
+    <header>
         <div class="menu-mobile-container">
             <div class="hide-menu">
                 &Cross;
@@ -129,14 +129,12 @@
                         3
                     </h3>
                     <h4>Livraison / Mise en ligne</h4>
-                    <button>
-                        En savoir plus
-                    </button>
+                    <button>En savoir plus</button>
                 </div>
             </div>
         </div>
         <div class="foot">
-            <button>Nous contacter</button>
+            <a href="{% url 'Contact' %}"><button>Nous contacter</button></a>
         </div>
     </section>
     <section class="marques">
@@ -177,7 +175,7 @@
             </div>
         </div>
         <div class="foot">
-            <button>Nous contacter</button>
+            <a href="{% url 'Contact' %}"><button>Nous contacter</button></a>
         </div>
     </section>
     <section class="localisation">
@@ -191,13 +189,13 @@
                     <p>Nous sommes aussi présent partout en ligne qu'en présentiel afin d'établir plus de contact aux clients pour avoir ensemble des perceptions bien définies et lointaines.</p>
                 </div>
                 <div class="foot">
-                    <button>Prendre un rendez-vous</button>
+                    <a href="{% url 'Contact' %}"><button>Prendre un rendez-vous</button></a>
                 </div>
             </aside>
         </div>
     </section>
     <footer>
-        <p>fait avec 💖 par <a href="#back_to_top">LUMINI</a></p>
+        <p>fait avec 💖 par <a href="{% url 'Home' %}">LUMINI</a></p>
     </footer>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="{% static 'js/Home.js' %}"></script>

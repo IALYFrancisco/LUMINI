@@ -25,3 +25,7 @@ L.marker([-18.906314, 47.547594])
     .addTo(map)
     .bindPopup('Nous sommes ici, à bientôt 👋.')
     .openPopup();
+
+function DateContact(){
+    localStorage.setItem('contact', 'date')
+}

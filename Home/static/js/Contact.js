@@ -1,5 +1,3 @@
-console.log('Contact page')
-
 var formLeftAside = document.querySelector('.left')
 var reasonInput = document.querySelector('.reason')
 var numberPhone = document.querySelector('.number')
@@ -16,3 +14,14 @@ function checkSelectValue(){
         numberPhone.style.display = 'none'
     }
 }
+
+function MakeDateContact(){
+    let value = localStorage.getItem('contact') || null
+    if(value){
+        document.querySelector('#object').value = 'date'
+        checkSelectValue()
+        localStorage.removeItem('contact')
+    }
+}
+
+MakeDateContact()

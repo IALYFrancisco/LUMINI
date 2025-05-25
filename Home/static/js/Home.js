@@ -28,5 +28,3 @@ L.marker([-18.906314, 47.547594])
 function DateContact(){
     localStorage.setItem('contact', 'date')
 }
-
-console.log("Home page")

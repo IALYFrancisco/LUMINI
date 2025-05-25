@@ -1,3 +1,5 @@
+console.log('Contact page')
+
 var formLeftAside = document.querySelector('.left')
 var reasonInput = document.querySelector('.reason')
 var numberPhone = document.querySelector('.number')

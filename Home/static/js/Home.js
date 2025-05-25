@@ -12,7 +12,6 @@ document.querySelector('.hide-menu').addEventListener('click', ()=>{
     document.querySelector('.menu-mobile-container').classList.remove('active')
 })
   
-// Initialisation de la carte centrée sur Paris
 const map = L.map('map').setView([-18.906314,47.547594], 15);
   
 // Ajout du fond de carte OpenStreetMap
@@ -29,3 +28,5 @@ L.marker([-18.906314, 47.547594])
 function DateContact(){
     localStorage.setItem('contact', 'date')
 }
+
+console.log("Home page")

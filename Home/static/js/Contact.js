@@ -3,6 +3,7 @@ var reasonInput = document.querySelector('.reason')
 var numberPhone = document.querySelector('.number')
 var formTitle = document.querySelector('form h1')
 var formDescription = document.querySelector('form p')
+var menuIcon = document.querySelector('.menu')
 
 function checkSelectValue(){
     let selectValue = document.querySelector('#object').value
@@ -29,5 +30,13 @@ function MakeDateContact(){
         localStorage.removeItem('contact')
     }
 }
+
+menuIcon.addEventListener('click', ()=>{
+    document.querySelector('.menu-mobile-container').classList.add('active')
+})
+
+document.querySelector('.hide-menu').addEventListener('click', ()=>{
+    document.querySelector('.menu-mobile-container').classList.remove('active')
+})
 
 MakeDateContact()

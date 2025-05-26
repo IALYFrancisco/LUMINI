@@ -8,27 +8,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{% static 'img/favicon1.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <meta name="robots" content="index, follow">
     <title>Accueil - LUMINI</title>
 </head>
 <body>
-    <header id="back_to_top">
+    <header>
         <div class="menu-mobile-container">
             <div class="hide-menu">
                 &Cross;
             </div>
             <ul>
-                <li><a href="#">Accueil</a></li>
+                <li><a href="{% url 'Home' %}">Accueil</a></li>
                 <li><a href="#" class="offre">Offre d'emploi</a></li>
                 <li><a href="#" class="blog">Blog</a></li>
             </ul>
         </div>
         <nav>
             <ul>
-                <img src="{% static 'img/favicon1.png' %}" alt="logo de LUMINI" title="logo de LUMINI">
-                <span>LUMINI</span>
+                <a href="{% url 'Home' %}" style="display: flex;">
+                    <img src="{% static 'img/favicon1.png' %}" alt="logo de LUMINI" title="logo de LUMINI">
+                    <span>LUMINI</span>
+                </a>
             </ul>
             <ul class="nav-desktop">
-                <li><a href="#">Accueil</a></li>
+                <li><a href="{% url 'Home' %}">Accueil</a></li>
                 <li><a href="#" class="offre">Offre d'emploi</a></li>
                 <li><a href="#" class="blog">Blog</a></li>
             </ul>
@@ -85,7 +88,9 @@
             </div>
         </div>
         <div class="foot">
-            <button>Nous contacter</button>
+            <a href="/contact">
+                <button>Nous contacter</button>
+            </a>
         </div>
     </section>
     <section class="realisation">
@@ -124,14 +129,12 @@
                         3
                     </h3>
                     <h4>Livraison / Mise en ligne</h4>
-                    <button>
-                        En savoir plus
-                    </button>
+                    <button>En savoir plus</button>
                 </div>
             </div>
         </div>
         <div class="foot">
-            <button>Nous contacter</button>
+            <a href="{% url 'Contact' %}"><button>Nous contacter</button></a>
         </div>
     </section>
     <section class="marques">
@@ -172,7 +175,7 @@
             </div>
         </div>
         <div class="foot">
-            <button>Nous contacter</button>
+            <a href="{% url 'Contact' %}"><button>Nous contacter</button></a>
         </div>
     </section>
     <section class="localisation">
@@ -186,13 +189,13 @@
                     <p>Nous sommes aussi présent partout en ligne qu'en présentiel afin d'établir plus de contact aux clients pour avoir ensemble des perceptions bien définies et lointaines.</p>
                 </div>
                 <div class="foot">
-                    <button>Prendre un rendez-vous</button>
+                    <a href="{% url 'Contact' %}"><button onclick="DateContact()">Prendre un rendez-vous</button></a>
                 </div>
             </aside>
         </div>
     </section>
     <footer>
-        <p>fait avec 💖 par <a href="#back_to_top">LUMINI</a></p>
+        <p>fait avec 💖 par <a href="{% url 'Home' %}">LUMINI</a></p>
     </footer>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="{% static 'js/Home.js' %}"></script>

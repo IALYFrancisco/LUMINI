@@ -3,3 +3,8 @@
 
 # Fichier variable d'environement du projet
 .env
+
+# Base de données
+db.sqlite3
+
+db.sqlite3-journal

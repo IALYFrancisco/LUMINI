@@ -14,4 +14,10 @@ def index(request):
     return render(request, 'index.html', context)
 
 def contact(request):
+
+    if 'post' in request:
+
+        if 'save' in request.POST:
+            
+
     return render(request, 'contact.html')

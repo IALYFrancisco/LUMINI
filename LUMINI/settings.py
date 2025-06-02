@@ -30,7 +30,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'lumini.onrender.com',
-    '127.0.0.1'
+    '127.0.0.1',
+    'https://lumini.onrender.com'
 ]
 
 

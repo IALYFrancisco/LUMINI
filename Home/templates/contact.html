@@ -35,7 +35,7 @@
                 <li><a href="#" class="blog">Blog</a></li>
             </ul>
             <ul class="nav-mobile">
-                <img class="menu" src="{% static 'img/menu.png' %}" alt="">
+                <img class="menu" src="{% static 'img/dark-menu.png' %}" alt="">
             </ul>
         </nav>
     </header>
@@ -43,7 +43,8 @@
         <aside class="left">
         </aside>
         <aside class="right">
-            <form action="">
+            <form method="POST" action="{% url 'Contact' %}">
+                {% csrf_token %}
                 <h1>Simple contact</h1>
                 <p>Avez-vous des idées en tête 💡? Suggestion, critique, amélioration? Laissez-nous juste un message et on vous répondra.</p>
                 <div class="element">
@@ -88,7 +89,7 @@
                     <textarea name="message" id="message" required placeholder="Ecrivez votre message."></textarea>
                 </div>
                 <div class="element">
-                    <button>Envoyer</button>
+                    <button name="save" type="submit">Envoyer</button>
                 </div>
             </form>
         </aside>

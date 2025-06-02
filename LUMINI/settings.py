@@ -31,9 +31,13 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'lumini.onrender.com',
     '127.0.0.1',
-    'https://lumini.onrender.com'
 ]
 
+CSRF_COOKIE_SECURE = True
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://lumini.onrender.com',
+]
 
 # Application definition
 

@@ -1,9 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import requests
 import os
-from .models import ContactMessage
-from django.http import HttpResponse
-# Create your views here.
+from .forms import ContactMessageForm
+from django.utils import timezone
 
 def index(request):
     try:
@@ -20,10 +19,13 @@ def index(request):
 
 def contact(request):
     if request.method == 'POST':
-        if 'save' in request.POST:
-            # newContactMessage = ContactMessage(request.POST)
-            # newContactMessage.save()
-            print(request.POST)
-            return HttpResponse("Hello tpk.")
+        _form = ContactMessageForm(request.POST)
+        if _form.is_valid():
+            newContactMessage = _form.save(commit=False)
+            if not newContactMessage.register_date:
+                newContactMessage.register_date = timezone.now().date()
+            newContactMessage.save()
+            return redirect('Contact')
     else:
-        return render(request, 'contact.html')
+        form = ContactMessageForm()
+        return render(request, 'contact.html', { 'form': form })

@@ -44,15 +44,17 @@ def contact(request):
                         "name": "IALY Francisco Raymond | Administrateur de LUMINI"
                     }
                 ],
-                "subject": "Object Message",
+                "subject": f"{_form.cleaned_data['message_object']}",
                 "htmlContent": "<html><body><h1>Bonjour !</h1><p>Ceci est un test avec Brevo API.</p></body></html>"
             }
 
             # response = requests.post(email_api_url, headers=headers, data=json.dumps(payload))
             # print("Status Code:", response.status_code)
             # print("Réponse JSON:", response.json())
-
-            messages.success(request, "Merci users_name 😊, le responsable recevra votre message et on vous répondra après, à bientôt 👋.")
+            if _form.cleaned_data['message_object'] == 'simple':
+                messages.success(request, f"Merci { _form.cleaned_data['client_name'] } 😊, le responsable recevra votre message et on vous répondra après, à bientôt 👋.")
+            if _form.cleaned_data['message_object'] == 'date':
+                messages.success(request, f"Merci { _form.cleaned_data['client_name'] } 😊, le responsable recevra votre message et on vous appellera après, à bientôt 👋.")
 
             return redirect('Contact')
     else:

@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
+from django.utils import timezone
+from django.contrib import messages
+from .forms import ContactMessageForm
 import requests
 import os
-from .forms import ContactMessageForm
-from django.utils import timezone
 import json
 
 def index(request):
@@ -43,13 +44,17 @@ def contact(request):
                         "name": "IALY Francisco Raymond | Administrateur de LUMINI"
                     }
                 ],
-                "subject": "Object Message",
-                "htmlContent": "<html><body><h1>Bonjour !</h1><p>Ceci est un test avec Brevo API.</p></body></html>"
+                "subject": f"{_form.cleaned_data['message_object']}",
+                "htmlContent": f"<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Document</title></head><body><main style=\"width: 100%;\"><section style=\"background-color: #073B4C; color: white; width: 100%; max-width: 600px; padding: 25px; margin: 100px auto; border-radius: 5px;\"><a href=\"https://lumini.onrender.com\" style=\"color: white;\"><h1 style=\"font-family: 'Trebuchet MS', Arial, sans-serif; display: flex; align-items: center;\"><img src=\"https://lumini.onrender.com/static/img/favicon1.png\" alt=\"Logo de LUMINI\" title=\"Logo de LUMINI\" style=\"width: 40px; margin-right: 5px;\">LUMINI</h1></a><h2 style=\"font-family: 'Trebuchet MS', Arial, sans-serif; margin-top: 50px;\">Bonjour IALY Francisco Raymond 😀,</h2><p style=\"margin-top: 20px; font-family: 'Trebuchet MS', Arial, sans-serif;\">{_form.cleaned_data['client_name']} vous a laissé un message sur LUMINI</p><a href=\"https://lumini.onrender.com\"><button  style=\"margin-top: 50px;color: #073B4C;font-size: 14px;font-weight: 500;background-color: white;border-style: solid;border-width: 2px;border-radius: 3px;border-color: #ffffff;cursor: pointer;padding: 8px 10px;\">aller sur LUMINI</button></a></section></main></body></html>"
             }
 
             response = requests.post(email_api_url, headers=headers, data=json.dumps(payload))
             print("Status Code:", response.status_code)
             print("Réponse JSON:", response.json())
+            if _form.cleaned_data['message_object'] == 'simple':
+                messages.success(request, f"Merci { _form.cleaned_data['client_name'] } 😊, le responsable recevra votre message et on vous répondra après, à bientôt 👋.")
+            if _form.cleaned_data['message_object'] == 'date':
+                messages.success(request, f"Merci { _form.cleaned_data['client_name'] } 😊, le responsable recevra votre message et on vous appellera après, à bientôt 👋.")
 
             return redirect('Contact')
     else:

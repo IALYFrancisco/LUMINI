@@ -7,6 +7,14 @@ var formTitle = document.querySelector('form h1')
 var formDescription = document.querySelector('form p')
 var menuIcon = document.querySelector('.menu')
 
+
+function HideMessage(){
+    var hideMessage = document.querySelector('.hide-message')    
+    hideMessage.addEventListener('click', ()=>{
+        document.querySelector('.message').classList.add('deactive')
+    })
+}
+
 function checkSelectValue(){
     let selectValue = document.querySelector('form > p:nth-child(7) select').value
     if(selectValue === "date"){

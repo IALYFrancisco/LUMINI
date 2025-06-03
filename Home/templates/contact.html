@@ -11,6 +11,14 @@
     <title>Contact - LUMINI</title>
 </head>
 <body>
+    {% if messages %}
+        <span class="message">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+            <div class="hide-message" onclick="HideMessage()">&Cross;</div>
+        </span>
+    {% endif %}
     <header>
         <div class="menu-mobile-container">
             <div class="hide-menu">
@@ -52,53 +60,7 @@
                 {{ form.as_p }}
                 <div class="element">
                     <button name="save" type="submit">Envoyer</button>
-                </div> 
-                <!-- <h1>Simple contact</h1>
-                <p>Avez-vous des idées en tête 💡? Suggestion, critique, amélioration? Laissez-nous juste un message et on vous répondra.</p>
-                <div class="element">
-                    <label for="name">Votre nom :</label>
-                    <input type="text" name="name" id="name" required placeholder="ex: John Doe">
                 </div>
-                <div class="element">
-                    <label for="email">Votre email :</label>
-                    <input type="email" name="email" id="email" required placeholder="ex: johndoe@example.com">
-                </div>
-                <div class="element number">
-                    <label for="number">Votre numéro téléphone :</label>
-                    <input type="tel" name="number" id="number" required placeholder="ex: +261 ... ... ...">
-                </div>
-                <div class="element">
-                    <label for="object">Objet du contact :</label>
-                    <select name="object" id="object" required onchange="checkSelectValue()">
-                        <option value="simple">
-                            Simple prise de contact 🤝
-                        </option>
-                        <option value="date">
-                            Prise de rendez-vous 📅
-                        </option>
-                    </select>
-                </div>
-                <div class="element reason">
-                    <label for="date_reason">Raison du prise de rendez-vous :</label>
-                    <select name="date_reason" id="date_reason" required onchange="checkSelectValue()">
-                        <option value="web">
-                            Création de site web | application web 🌐
-                        </option>
-                        <option value="mobile">
-                            Création d'application mobile 📱
-                        </option>
-                        <option value="hosting">
-                            Mise en ligne d'une application web | mobile 🧱
-                        </option>
-                    </select>
-                </div>
-                <div class="element">
-                    <label for="message">Votre message :</label>
-                    <textarea name="message" id="message" required placeholder="Ecrivez votre message."></textarea>
-                </div>
-                <div class="element">
-                    <button name="save" type="submit">Envoyer</button>
-                </div> -->
             </form>
         </aside>
     </main>

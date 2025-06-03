@@ -261,6 +261,67 @@ main {
     transition: 200ms ease-in-out;
 }
 
+span.message {
+    position: absolute;
+    z-index: 2;
+    font-size: 12px;
+    font-weight: 300;
+    width: 80%;
+    max-width: 400px;
+    background-color: #073B4C;
+    color: white;
+    margin: 75px auto;
+    left: -50%;
+    right: -50%;
+    padding: 20px;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.215);
+    box-shadow: -10px -10px 25px rgba(0, 0, 0, 0.215);
+    border-radius: 4px;
+    animation: apparition 1.5s ease-in-out;
+}
+
+.hide-message {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding-bottom: 2px;
+    cursor: pointer;
+}
+
+span.message.deactive {
+    display: none;
+}
+
+@keyframes apparition {
+    0%{
+        background-color: white;
+        width: 300px;
+        position: fixed;
+        opacity: 0;
+        pointer-events: none;
+        margin: 100px auto;
+        left: -50%;
+        right: -50%;
+        transition: 300ms;
+        transform: scale(1.1);
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.429);
+        border-radius: 5px;
+        padding: 20px 15px;
+    }100%{
+        opacity: 1;
+        pointer-events: auto;
+        transform: scale(1);
+    }
+}
+
 @media only screen and (max-width: 766px) {
     header {
         padding: 10px 20px 20px 20px;

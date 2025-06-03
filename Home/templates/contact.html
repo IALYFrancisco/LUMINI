@@ -46,6 +46,14 @@
             <form method="POST" action="{% url 'Contact' %}">
                 {% csrf_token %}
                 <h1>Simple contact</h1>
+                <div>
+                    <p id="form_description">Avez-vous des idées en tête 💡? Suggestion, critique, amélioration? Laissez-nous juste un message et on vous répondra.</p>
+                </div>
+                {{ form.as_p }}
+                <div class="element">
+                    <button name="save" type="submit">Envoyer</button>
+                </div> 
+                <!-- <h1>Simple contact</h1>
                 <p>Avez-vous des idées en tête 💡? Suggestion, critique, amélioration? Laissez-nous juste un message et on vous répondra.</p>
                 <div class="element">
                     <label for="name">Votre nom :</label>
@@ -71,15 +79,15 @@
                     </select>
                 </div>
                 <div class="element reason">
-                    <label for="objcet">Raison du prise de rendez-vous :</label>
-                    <select name="object" id="reason" required onchange="checkSelectValue()">
+                    <label for="date_reason">Raison du prise de rendez-vous :</label>
+                    <select name="date_reason" id="date_reason" required onchange="checkSelectValue()">
                         <option value="web">
                             Création de site web | application web 🌐
                         </option>
                         <option value="mobile">
                             Création d'application mobile 📱
                         </option>
-                        <option value="mobile">
+                        <option value="hosting">
                             Mise en ligne d'une application web | mobile 🧱
                         </option>
                     </select>
@@ -90,7 +98,7 @@
                 </div>
                 <div class="element">
                     <button name="save" type="submit">Envoyer</button>
-                </div>
+                </div> -->
             </form>
         </aside>
     </main>

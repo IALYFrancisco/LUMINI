@@ -164,7 +164,7 @@ main {
     margin-top: 200px;
 }
 
-.right p {
+.right #form_description {
     font-size: 13px;
     margin-top: 20px;
     margin-bottom: 50px;
@@ -219,7 +219,7 @@ main {
     outline-color: #33c0ef;
  }
 
- .right .element {
+ .right form > p {
     margin-bottom: 25px;
  }
 

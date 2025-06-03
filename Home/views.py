@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
+from django.utils import timezone
+from django.contrib import messages
+from .forms import ContactMessageForm
 import requests
 import os
-from .forms import ContactMessageForm
-from django.utils import timezone
 import json
 
 def index(request):
@@ -47,9 +48,11 @@ def contact(request):
                 "htmlContent": "<html><body><h1>Bonjour !</h1><p>Ceci est un test avec Brevo API.</p></body></html>"
             }
 
-            response = requests.post(email_api_url, headers=headers, data=json.dumps(payload))
-            print("Status Code:", response.status_code)
-            print("Réponse JSON:", response.json())
+            # response = requests.post(email_api_url, headers=headers, data=json.dumps(payload))
+            # print("Status Code:", response.status_code)
+            # print("Réponse JSON:", response.json())
+
+            messages.success(request, "Merci users_name 😊, le responsable recevra votre message et on vous répondra après, à bientôt 👋.")
 
             return redirect('Contact')
     else:

@@ -43,7 +43,7 @@ def contact(request):
                         "name": "IALY Francisco Raymond | Administrateur de LUMINI"
                     }
                 ],
-                "subject": request.POST.message_object,
+                "subject": "Object Message",
                 "htmlContent": "<html><body><h1>Bonjour !</h1><p>Ceci est un test avec Brevo API.</p></body></html>"
             }
 

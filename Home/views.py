@@ -3,6 +3,7 @@ import requests
 import os
 from .forms import ContactMessageForm
 from django.utils import timezone
+import json
 
 def index(request):
     try:
@@ -25,6 +26,31 @@ def contact(request):
             if not newContactMessage.register_date:
                 newContactMessage.register_date = timezone.now().date()
             newContactMessage.save()
+            email_api_url = os.getenv('EMAIL_API_ENDPOINT')
+            headers = {
+                "accept": "application/json",
+                "api-key": os.getenv('EMAIL_API_KEY'),
+                "content-type": "application/json"
+            }
+            payload = {
+                "sender": {
+                    "name": "LUMINI",
+                    "email": "franciscoialy43@gmail.com"
+                },
+                "to": [
+                    {
+                        "email": "ialyfrancisco7@gmail.com",
+                        "name": "IALY Francisco Raymond | Administrateur de LUMINI"
+                    }
+                ],
+                "subject": "Object Message",
+                "htmlContent": "<html><body><h1>Bonjour !</h1><p>Ceci est un test avec Brevo API.</p></body></html>"
+            }
+
+            response = requests.post(email_api_url, headers=headers, data=json.dumps(payload))
+            print("Status Code:", response.status_code)
+            print("Réponse JSON:", response.json())
+
             return redirect('Contact')
     else:
         form = ContactMessageForm()

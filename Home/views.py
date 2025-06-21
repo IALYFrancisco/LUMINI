@@ -15,6 +15,7 @@ def index(request):
         context = {
             "projects" : response.json()["data"]
         }
+        print(response.json()["data"])
         return render(request, 'index.html', context)
     except:
         return render(request, 'index.html')

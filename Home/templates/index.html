@@ -153,7 +153,7 @@
                 {% for project in projects %}
                     <div class="card-logo">
                         <a href="{{ project.host_url }}" target="_blank">
-                            <img src="{% static 'img/logo_gamepalace.png' %}" alt="logo de APIPOST">
+                            <img src="{{ project.logo }}" alt="logo de {{ project.name }}">
                             <p class="plateform_name">{{ project.name }}</p>
                         </a>
                     </div>

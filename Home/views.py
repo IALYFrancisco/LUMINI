@@ -13,7 +13,7 @@ def index(request):
         }
         response = requests.get(f"{os.getenv('API_URL')}", headers=_headers)
         context = {
-            "projects" : response.json()["data"]
+            "projects" : response.json()
         }
         return render(request, 'index.html', context)
     except:

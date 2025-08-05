@@ -472,17 +472,17 @@ header a {
 }
 
 .first {
-    animation:  10s slide linear infinite;
+    animation:  20s slide linear infinite;
     padding: 0 33px;
 }
 
 .second {
-    animation:  10s slide linear infinite;
+    animation:  20s slide linear infinite;
     padding: 0 33px;
 }
 
 .third {
-    animation:  10s slide linear infinite;
+    animation:  20s slide linear infinite;
     padding: 0 33px;
 }
 
